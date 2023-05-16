@@ -27,3 +27,4 @@ chiragios1, chirag.patel1@bacancy.com
 ## License
 
 GCLocation is available under the MIT license. See the LICENSE file for more info.
+# GCLocationPOD
