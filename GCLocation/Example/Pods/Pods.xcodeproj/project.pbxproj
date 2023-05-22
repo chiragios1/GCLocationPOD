@@ -12,15 +12,15 @@
 		459BDE70B88B759DEB74147899D9F9D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		4C2C6EAACBEED2C7B1F83D32EC869D72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		4D66E18D519C0280C99EBC176DB0B079 /* Pods-GCLocation_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F523B5911CCC42E448803F39DA1D3DBC /* Pods-GCLocation_Tests-dummy.m */; };
-		4DFD91E4D6166E45E8DEEFB14D74183B /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55CF8E7F93941974C5073F77A43534F /* ReplaceMe.swift */; };
 		5E4D88352D541225D75F16337B791E05 /* Pods-GCLocation_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1CAAD549F9C720897AA0CD3E2043DB /* Pods-GCLocation_Example-dummy.m */; };
 		6A8A204D1A61CF3EEC9A39AB7F5DB440 /* GCLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1E4CC2D674A3834650AC9F8E902439 /* GCLocation-dummy.m */; };
-		84C860362A13BA8F004D06A0 /* GCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C860302A13BA8F004D06A0 /* GCLocation.swift */; };
-		84C860372A13BA8F004D06A0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C860312A13BA8F004D06A0 /* LocationManager.swift */; };
-		84C860382A13BA8F004D06A0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C860322A13BA8F004D06A0 /* CoreDataStack.swift */; };
-		84C860392A13BA8F004D06A0 /* AlamofireManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C860332A13BA8F004D06A0 /* AlamofireManger.swift */; };
-		84C8603A2A13BA8F004D06A0 /* Geohash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C860342A13BA8F004D06A0 /* Geohash.swift */; };
-		84C8603B2A13BA8F004D06A0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C860352A13BA8F004D06A0 /* Helper.swift */; };
+		84C581E42A1B87B600C4D09C /* AlamofireManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581DD2A1B87B600C4D09C /* AlamofireManger.swift */; };
+		84C581E52A1B87B600C4D09C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581DE2A1B87B600C4D09C /* Helper.swift */; };
+		84C581E62A1B87B600C4D09C /* GCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581DF2A1B87B600C4D09C /* GCLocation.swift */; };
+		84C581E72A1B87B600C4D09C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581E02A1B87B600C4D09C /* LocationManager.swift */; };
+		84C581E82A1B87B600C4D09C /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581E12A1B87B600C4D09C /* ReplaceMe.swift */; };
+		84C581E92A1B87B600C4D09C /* Geohash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581E22A1B87B600C4D09C /* Geohash.swift */; };
+		84C581EA2A1B87B600C4D09C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581E32A1B87B600C4D09C /* CoreDataStack.swift */; };
 		AE9A3BA5B672176F3C0B3EFCD1894D04 /* GCLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 77E37DF83587571D8F8B05819CF57325 /* GCLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD35CF7CB24EFB2A4F3648D4C23FE83A /* Pods-GCLocation_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BAB3C860D45969E45EF7CF752D5DC73 /* Pods-GCLocation_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -60,12 +60,13 @@
 		77E37DF83587571D8F8B05819CF57325 /* GCLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCLocation-umbrella.h"; sourceTree = "<group>"; };
 		7B5B6EF8C96A35E0E7050A4474138DFA /* GCLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GCLocation.debug.xcconfig; sourceTree = "<group>"; };
 		7D2B346FB169E28CA4C475EC27565102 /* Pods-GCLocation_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GCLocation_Example-frameworks.sh"; sourceTree = "<group>"; };
-		84C860302A13BA8F004D06A0 /* GCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCLocation.swift; path = GCLocation/Classes/GCLocation.swift; sourceTree = "<group>"; };
-		84C860312A13BA8F004D06A0 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = GCLocation/Classes/LocationManager.swift; sourceTree = "<group>"; };
-		84C860322A13BA8F004D06A0 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = GCLocation/Classes/CoreDataStack.swift; sourceTree = "<group>"; };
-		84C860332A13BA8F004D06A0 /* AlamofireManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireManger.swift; path = GCLocation/Classes/AlamofireManger.swift; sourceTree = "<group>"; };
-		84C860342A13BA8F004D06A0 /* Geohash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geohash.swift; path = GCLocation/Classes/Geohash.swift; sourceTree = "<group>"; };
-		84C860352A13BA8F004D06A0 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = GCLocation/Classes/Helper.swift; sourceTree = "<group>"; };
+		84C581DD2A1B87B600C4D09C /* AlamofireManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireManger.swift; path = Classes/AlamofireManger.swift; sourceTree = "<group>"; };
+		84C581DE2A1B87B600C4D09C /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Classes/Helper.swift; sourceTree = "<group>"; };
+		84C581DF2A1B87B600C4D09C /* GCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCLocation.swift; path = Classes/GCLocation.swift; sourceTree = "<group>"; };
+		84C581E02A1B87B600C4D09C /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Classes/LocationManager.swift; sourceTree = "<group>"; };
+		84C581E12A1B87B600C4D09C /* ReplaceMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		84C581E22A1B87B600C4D09C /* Geohash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geohash.swift; path = Classes/Geohash.swift; sourceTree = "<group>"; };
+		84C581E32A1B87B600C4D09C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = Classes/CoreDataStack.swift; sourceTree = "<group>"; };
 		97B84C0530FA9152FFA59F63B62EA161 /* GCLocation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCLocation-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0548265BE8C17A97B086BF1405C1B54 /* Pods-GCLocation_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GCLocation_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		ECD2C05FCA4D0AEAE0CBD309F01A7C7F /* Pods-GCLocation_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GCLocation_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F0D38F2929C83D7EC9FA93B3A55507A4 /* Pods-GCLocation_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GCLocation_Tests-Info.plist"; sourceTree = "<group>"; };
 		F523B5911CCC42E448803F39DA1D3DBC /* Pods-GCLocation_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GCLocation_Tests-dummy.m"; sourceTree = "<group>"; };
-		F55CF8E7F93941974C5073F77A43534F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = GCLocation/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,13 +175,13 @@
 		87D86C3696D64542701B5F70EA4B99C5 /* GCLocation */ = {
 			isa = PBXGroup;
 			children = (
-				84C860332A13BA8F004D06A0 /* AlamofireManger.swift */,
-				84C860322A13BA8F004D06A0 /* CoreDataStack.swift */,
-				84C860302A13BA8F004D06A0 /* GCLocation.swift */,
-				84C860342A13BA8F004D06A0 /* Geohash.swift */,
-				84C860352A13BA8F004D06A0 /* Helper.swift */,
-				84C860312A13BA8F004D06A0 /* LocationManager.swift */,
-				F55CF8E7F93941974C5073F77A43534F /* ReplaceMe.swift */,
+				84C581E32A1B87B600C4D09C /* CoreDataStack.swift */,
+				84C581DF2A1B87B600C4D09C /* GCLocation.swift */,
+				84C581E22A1B87B600C4D09C /* Geohash.swift */,
+				84C581DD2A1B87B600C4D09C /* AlamofireManger.swift */,
+				84C581DE2A1B87B600C4D09C /* Helper.swift */,
+				84C581E02A1B87B600C4D09C /* LocationManager.swift */,
+				84C581E12A1B87B600C4D09C /* ReplaceMe.swift */,
 				7FA4CF412A98546059809E039A7357ED /* Pod */,
 				6544242DB07EF537684C038678822550 /* Support Files */,
 			);
@@ -385,14 +385,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C860382A13BA8F004D06A0 /* CoreDataStack.swift in Sources */,
-				84C860372A13BA8F004D06A0 /* LocationManager.swift in Sources */,
-				84C860392A13BA8F004D06A0 /* AlamofireManger.swift in Sources */,
+				84C581EA2A1B87B600C4D09C /* CoreDataStack.swift in Sources */,
+				84C581E82A1B87B600C4D09C /* ReplaceMe.swift in Sources */,
 				6A8A204D1A61CF3EEC9A39AB7F5DB440 /* GCLocation-dummy.m in Sources */,
-				84C860362A13BA8F004D06A0 /* GCLocation.swift in Sources */,
-				84C8603A2A13BA8F004D06A0 /* Geohash.swift in Sources */,
-				4DFD91E4D6166E45E8DEEFB14D74183B /* ReplaceMe.swift in Sources */,
-				84C8603B2A13BA8F004D06A0 /* Helper.swift in Sources */,
+				84C581E92A1B87B600C4D09C /* Geohash.swift in Sources */,
+				84C581E62A1B87B600C4D09C /* GCLocation.swift in Sources */,
+				84C581E72A1B87B600C4D09C /* LocationManager.swift in Sources */,
+				84C581E52A1B87B600C4D09C /* Helper.swift in Sources */,
+				84C581E42A1B87B600C4D09C /* AlamofireManger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
