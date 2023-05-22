@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'GCLocation'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of GCLocation.'
+  s.name             = 'GCLocationPOD'
+  s.version          = '1.0.4'
+  s.summary          = 'GCLocation will use for get location from users'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,20 +18,20 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  GCLocation will use for get location from users, GCLocation will use for get location from users, GCLocation will use for get location from users
                        DESC
 
-  s.homepage         = 'https://github.com/chiragios1/GCLocation'
+  s.homepage         = 'https://github.com/chiragios1/GCLocationPOD'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'chiragios1' => 'chirag.patel1@bacancy.com' }
-  s.source           = { :git => 'https://github.com/chiragios1/GCLocation.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/chiragios1/GCLocationPOD.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '15.0'
 
   s.source_files = 'GCLocation/Classes/**/*'
-  
+  s.swift_version = '5.0'
   # s.resource_bundles = {
   #   'GCLocation' => ['GCLocation/Assets/*.png']
   # }
@@ -39,4 +39,8 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Alamofire'
+     s.dependency 'ReachabilitySwift'
+     s.dependency 'SSZipArchive'
+     s.dependency 'CocoaLumberjack/Swift'
 end
