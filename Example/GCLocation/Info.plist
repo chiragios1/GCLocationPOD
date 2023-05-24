@@ -22,6 +22,18 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>The data you see is only visible to you, irreversibly encrypted on your phone, and anonymously used to optimize your delivery. For the best delivery experience, please choose "Always Allow".</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We want to optimize your delivery result! Can we use your position for this?
+Your Data is completely anonymous and is not used for other purposes.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We want to optimize your delivery result! Can we use your position for this?
+Your Data is completely anonymous and is not used for other purposes.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

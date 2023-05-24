@@ -1,5 +1,5 @@
 import XCTest
-import GCLocation
+import GCLocationPOD
 
 class Tests: XCTestCase {
     

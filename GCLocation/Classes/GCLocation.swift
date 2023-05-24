@@ -202,11 +202,8 @@ public class GCLocation: NSObject {
            
              callAPIForPlaceStore(geoHash: s)
              
-             var newLocation: LocationwithtimestampUserDefault!
-             newLocation.longitude = location.coordinate.latitude
-             newLocation.latitude = location.coordinate.longitude
-             newLocation.timestamp = Date()
-             newLocation.applicationState  = ApplicationState().toString()
+             let newLocation = LocationwithtimestampUserDefault(applicationState:ApplicationState().toString() , longitude : location.coordinate.longitude, latitude: location.coordinate.latitude, timestamp: Date())
+           
 
              //To save the object
              var aResult = UserDefaults.standard.retrieve(object: [LocationwithtimestampUserDefault].self, fromKey: "LocationwithtimestampUserDefault")
@@ -304,10 +301,12 @@ public class GCLocation: NSObject {
                 }
             } else {
                 
-                var aLocationUpdateFailur: LocationUpdateFailurUserDefault!
-                aLocationUpdateFailur.customer_id = (dict["positions"] as! [[String: Any]])[0]["customer_id"] as? String
-                aLocationUpdateFailur.geo_hash = (dict["positions"] as! [[String: Any]])[0]["geo_hash"] as? String
-                aLocationUpdateFailur.tstmp = Int16(truncatingIfNeeded: (dict["positions"] as! [[String: Any]])[0]["tstmp"] as! Int)
+                let aLocationUpdateFailur = LocationUpdateFailurUserDefault(((dict["positions"] as! [[String: Any]])[0]["customer_id"] as? String)!,((dict["positions"] as! [[String: Any]])[0]["geo_hash"] as? String)!, Int16(truncatingIfNeeded: (dict["positions"] as! [[String: Any]])[0]["tstmp"] as! Int) )
+                
+                
+//                aLocationUpdateFailur.customer_id = (dict["positions"] as! [[String: Any]])[0]["customer_id"] as? String
+//                aLocationUpdateFailur.geo_hash = (dict["positions"] as! [[String: Any]])[0]["geo_hash"] as? String
+//                aLocationUpdateFailur.tstmp = Int16(truncatingIfNeeded: (dict["positions"] as! [[String: Any]])[0]["tstmp"] as! Int)
 
                 //To save the object
                 

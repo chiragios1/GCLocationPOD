@@ -1,0 +1,6 @@
+framework module GCLocationPOD {
+  umbrella header "GCLocationPOD-umbrella.h"
+
+  export *
+  module * { export * }
+}
