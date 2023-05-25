@@ -3,7 +3,7 @@ PODS:
   - CocoaLumberjack/Core (3.8.0)
   - CocoaLumberjack/Swift (3.8.0):
     - CocoaLumberjack/Core
-  - GCLocationPOD (1.0.10):
+  - GCLocationPOD (1.0.13):
     - Alamofire
     - CocoaLumberjack/Swift
     - ReachabilitySwift
@@ -28,10 +28,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
-  GCLocationPOD: 418417efd6f7f4677b3cea326da85bcb42a80a71
+  GCLocationPOD: e68e708c3ecb57752ce355a81c7696773adbfb4c
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SSZipArchive: 285b618a158ebc421039c22db5b77d345c7c03db
 
-PODFILE CHECKSUM: fb139c0712bf39c37bcc028cb6f2d5e6c92fde60
+PODFILE CHECKSUM: e758fe274c39478bbd41fc1c2e009cf24ae56db7
 
 COCOAPODS: 1.12.1
