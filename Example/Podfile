@@ -3,7 +3,7 @@ use_frameworks!
 platform :ios, '15.5'
 
 target 'GCLocation_Example' do
-  pod 'GCLocation', :path => '../'
+  pod 'GCLocationPOD', :path => '../'
 
   target 'GCLocation_Tests' do
     inherit! :search_paths
