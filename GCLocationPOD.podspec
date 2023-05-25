@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GCLocationPOD'
-  s.version          = '1.0.11'
+  s.version          = '1.0.12'
   s.summary          = 'GCLocation will use for get location from users'
 
 # This description is used to generate tags and improve search results.
@@ -32,6 +32,10 @@ Pod::Spec.new do |s|
 
   s.source_files = 'GCLocation/Classes/**/*'
   s.swift_version = '5.0'
+  s.pod_target_xcconfig = {
+      'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+    }
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   # s.resource_bundles = {
   #   'GCLocation' => ['GCLocation/Assets/*.png']
   # }
