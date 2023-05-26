@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
      s.dependency 'Alamofire'
-     s.dependency 'ReachabilitySwift'
+   #  s.dependency 'ReachabilitySwift'
      s.dependency 'SSZipArchive'
      s.dependency 'CocoaLumberjack/Swift'
 end

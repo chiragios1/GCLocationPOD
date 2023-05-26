@@ -17,7 +17,7 @@ import CommonCrypto
 import CryptoKit
 import os
 import BackgroundTasks
-import Reachability
+
 import  UIKit
 import SSZipArchive
 

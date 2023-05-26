@@ -8,7 +8,7 @@
 import Foundation
 
 import Alamofire
-import Reachability
+
 import SystemConfiguration
 import os
 import CocoaLumberjack
