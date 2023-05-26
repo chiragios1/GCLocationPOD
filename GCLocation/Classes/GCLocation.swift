@@ -20,7 +20,7 @@ import BackgroundTasks
 import Reachability
 import  UIKit
 import SSZipArchive
-@available(macOS 11.0, *)
+
 public class GCLocation: NSObject {
    // var locationObject = [Locationwithtimestamp]()
   //  public lazy var cdsLocationWithTimestamp: CoreDataStack = .init(modelName: "LocationWithTimestamp")
@@ -285,7 +285,7 @@ public class GCLocation: NSObject {
   //// WEB API public funcTIONs
     public func callAPIForPlaceStore(geoHash : String){
         
-        let dict = ["positions" :[["customer_id" : UserDefaults.standard.string(forKey: "user_id")!,"geo_hash":geoHash, "tstmp" : Helper.getCurrentTimeStampWOMiliseconds(dateToConvert: Date()) ]]] as [String : Any]
+        let dict = ["positions" :[["customer_id" : UserDefaults.standard.string(forKey: "user_id")!,"geo_hash":geoHash, "tstmp" : Helper.getCurrentTimeStampWOMiliseconds(dateToConvert: Date()) ] as [String : Any]]] as [String : Any]
         
         AlamoFireCommon.PostURL(url: "position", dict: dict) { responceData, success, error in
             if success
