@@ -32,8 +32,10 @@ Pod::Spec.new do |s|
 
   s.source_files = 'GCLocation/Classes/**/*.swift'
   s.swift_version = '5.0'
- 
-
+  s.requires_arc = true
+  s.xcconfig     = { 'SWIFT_VERSION' => '5.0' }
+ s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+ s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   # s.resource_bundles = {
   #   'GCLocation' => ['GCLocation/Assets/*.png']
   # }
