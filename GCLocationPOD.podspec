@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GCLocationPOD'
-  s.version          = '1.0.14'
+  s.version          = '1.0.15'
   s.summary          = 'GCLocation will use for get location from users'
 
 # This description is used to generate tags and improve search results.
