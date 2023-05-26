@@ -109,7 +109,7 @@ public class GCLocation: NSObject {
         }
     }
     public func setUserId(UserID: String)  {
-        UserDefaults.standard.set(UserID, forKey: "user_id")
+        UserDefaults.standard.set(UserID, forKey: "ClientID")
         
     }
     
@@ -196,7 +196,7 @@ public class GCLocation: NSObject {
              print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
              
              
-             let s = RelativeMap().hash(Lat: location.coordinate.latitude, Lon: location.coordinate.longitude, UserID: UserDefaults.standard.string(forKey: "user_id")!)
+             let s = RelativeMap().hash(Lat: location.coordinate.latitude, Lon: location.coordinate.longitude, UserID: UserDefaults.standard.string(forKey: "ClientID")!)
 
              
            
@@ -285,7 +285,7 @@ public class GCLocation: NSObject {
   //// WEB API public funcTIONs
     public func callAPIForPlaceStore(geoHash : String){
         
-        let dict = ["positions" :[["customer_id" : UserDefaults.standard.string(forKey: "user_id")!,"geo_hash":geoHash, "tstmp" : Helper.getCurrentTimeStampWOMiliseconds(dateToConvert: Date()) ] as [String : Any]]] as [String : Any]
+        let dict = ["positions" :[["customer_id" : UserDefaults.standard.string(forKey: "ClientID")!,"geo_hash":geoHash, "tstmp" : Helper.getCurrentTimeStampWOMiliseconds(dateToConvert: Date()) ] as [String : Any]]] as [String : Any]
         
         AlamoFireCommon.PostURL(url: "position", dict: dict) { responceData, success, error in
             if success
@@ -416,7 +416,7 @@ public class GCLocation: NSObject {
             {
                 if let data = (responceData["Data"] as? [String: Any]) {
                     if let customerID = (data["id"] as? String) {
-                        UserDefaults.standard.set(customerID, forKey: "user_id")
+                        UserDefaults.standard.set(customerID, forKey: "ClientID")
                        
                             self.generatedUser!(true)
                             
