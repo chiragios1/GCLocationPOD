@@ -79,7 +79,7 @@ public class AlamoFireCommon:  NSObject
         if SingleTon.isInternetAvailable()
         {
           //  let fullUrl = "https://api-staging.green-convenience.com/v1/api/\(url)"
-            let fullUrl = "\(fullURL ?? "")\(url)"
+            let fullUrl = "\(fullURL ?? "https://api-staging.green-convenience.com/v1/api/")\(url)"
             var headers = HTTPHeaders()
             headers = ["Content-Type": "application/json", "key": UserDefaults.standard.string(forKey: "ClientKey") ?? ""]
            // fullUrl =  APIURL.BASEURL + url
@@ -130,7 +130,7 @@ public class AlamoFireCommon:  NSObject
         if SingleTon.isInternetAvailable()
         {
             //let fullUrl = "https://api-staging.green-convenience.com/v1/api/\(url)"
-            let fullUrl = "\(fullURL ?? "")\(url)"
+            let fullUrl = "\(fullURL ?? "https://api-staging.green-convenience.com/v1/api/")\(url)"
             var headers = HTTPHeaders()
             headers = ["Content-Type": "application/json", "key": UserDefaults.standard.string(forKey: "ClientKey") ?? ""]
            // fullUrl =  APIURL.BASEURL + url

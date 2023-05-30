@@ -29,6 +29,7 @@ public class GCLocation: NSObject {
     public  let formatter = DateFormatter()
     //public let generatedUser = ((Bool) -> Void)?.self
    public var generatedUser : ((Bool) -> Void)?
+   public typealias CompletionHandler = (_ success:Bool, _ useID: String) -> Void
     var reachability : Reachability?
     // Parse two times as strings
     public  let time1String = "13:30"
@@ -109,7 +110,7 @@ public class GCLocation: NSObject {
         }
     }
     public func setUserId(UserID: String)  {
-        UserDefaults.standard.set(UserID, forKey: "ClientID")
+        UserDefaults.standard.set(UserID, forKey: "CustomerID")
         
     }
     
@@ -119,7 +120,7 @@ public class GCLocation: NSObject {
             if success
             {
                 if let data = (responceData["Data"] as? [String: Any]) {
-                    self.callAPIForGETclient(data["Id"] as! String)
+                    self.callAPIForGETclient(data["id"] as! String)
 
                 }
             }
@@ -132,8 +133,11 @@ public class GCLocation: NSObject {
         
         
     }
-    public func generateUser(){
-        self.callAPIForCreateCustomerID(UserDefaults.standard.string(forKey: "ClientID")!)
+    public func generateUser(completionHandlerUser: @escaping CompletionHandler){
+        self.callAPIForCreateCustomerID(UserDefaults.standard.string(forKey: "ClientID")!, completionHandler: { (isSuccess, userID) -> Void in
+            
+            completionHandlerUser(isSuccess, userID)
+        })
     }
     public func GetLogFile(){
         let logFileLogger = DDFileLogger()
@@ -285,7 +289,7 @@ public class GCLocation: NSObject {
   //// WEB API public funcTIONs
     public func callAPIForPlaceStore(geoHash : String){
         
-        let dict = ["positions" :[["customer_id" : UserDefaults.standard.string(forKey: "ClientID")!,"geo_hash":geoHash, "tstmp" : Helper.getCurrentTimeStampWOMiliseconds(dateToConvert: Date()) ] as [String : Any]]] as [String : Any]
+        let dict = ["positions" :[["customer_id" : UserDefaults.standard.string(forKey: "CustomerID")!,"geo_hash":geoHash, "tstmp" : Helper.getCurrentTimeStampWOMiliseconds(dateToConvert: Date()) ] as [String : Any]]] as [String : Any]
         
         AlamoFireCommon.PostURL(url: "position", dict: dict) { responceData, success, error in
             if success
@@ -373,7 +377,10 @@ public class GCLocation: NSObject {
                     if let Token = (data["token"] as? String) {
                         
                         UserDefaults.standard.set(Token, forKey: "token")
-                        self.callAPIForCreateCustomerID(clientID)
+                       
+                        self.callAPIForCreateCustomerID(clientID, completionHandler: { (isSuccess, userID) -> Void in
+                            
+                        })
                     }
                 }
                 
@@ -389,22 +396,20 @@ public class GCLocation: NSObject {
        
 
     }
-    public func callAPIForCreateCustomerID(_ clientID : String){
+     func callAPIForCreateCustomerID(_ clientID : String,  completionHandler:  @escaping CompletionHandler) {
         let dict = ["client_Id" : clientID] as [String : Any]
         AlamoFireCommon.PostURL(url: "customer", dict: dict) { responceData, success, error in
             if success
             {
                 if let data = (responceData["Data"] as? [String: Any]) {
-                    if let clientID = (data["Id"] as? String) {
-                        self.callAPIForGetCustomer(clientID)
+                    if let clientID = (data["id"] as? String) {
+                       // self.callAPIForGetCustomer(clientID)
+                        completionHandler(success, clientID)
                     }
                     
                 }
             }
-            else {
-                self.generatedUser!(false)
-                
-            }
+            
         }
        
 
@@ -416,9 +421,9 @@ public class GCLocation: NSObject {
             {
                 if let data = (responceData["Data"] as? [String: Any]) {
                     if let customerID = (data["id"] as? String) {
-                        UserDefaults.standard.set(customerID, forKey: "ClientID")
+                        UserDefaults.standard.set(customerID, forKey: "CustomerID")
                        
-                            self.generatedUser!(true)
+                           
                             
                        
                     }
