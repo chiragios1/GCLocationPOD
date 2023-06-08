@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // GCLocation.shared.createNewClient(clintName: "ChiragIOS")
-        GCLocation.shared.configure(serverURL: "https://api-staging.green-convenience.com/v1/api/", ClientKey: "dEdOeXdx", ClientID: "0f6dff20-b469-4ea4-ae9c-996b4523f3de")
+        GCLocation.shared.configure(serverURL: "https://api-staging.green-convenience.com/", ClientKey: "dEdOeXdx", ClientID: "0f6dff20-b469-4ea4-ae9c-996b4523f3de")
         GCLocation.shared.generateUser { success, useID in
             
         }

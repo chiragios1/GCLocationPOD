@@ -53,10 +53,10 @@ class RelativeMap {
     
     private let gridArea = [
         (0, 6250, 3125),
-        (1, 781, 781),
-        (2, 196, 98),
-        (3, 24, 24),
-        (4, 6, 3)
+                (1, 782, 782),
+                (2, 196, 98),
+                (3, 25, 25),
+                (4, 7, 4)
     ]
     //    private func sha256(input: String) -> String {
     //        let md = SHA256()

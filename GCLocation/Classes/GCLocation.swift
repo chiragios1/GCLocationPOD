@@ -84,7 +84,7 @@ public class GCLocation: NSObject {
 
         }
     public func configure(serverURL: String, ClientKey: String, ClientID: String){
-        AlamoFireCommon.fullURL = serverURL
+        AlamoFireCommon.fullURL = serverURL + "v1/api/"
         UserDefaults.standard.set(ClientKey, forKey: "ClientKey")
         UserDefaults.standard.set(ClientID, forKey: "ClientID")
        
