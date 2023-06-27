@@ -438,5 +438,87 @@ public class GCLocation: NSObject {
        
 
     }
+    
+    
+    /// EVEN APIS
+    ///
+    ///
+    ///
+   
+   public func requestDeliveryEvents(completion: @escaping (_ responceData:NSArray, _ success: Bool, _ error: Error) -> ()) {
+        
+      //  let dict = ["id" : UserDefaults.standard.string(forKey: "user_id")! ] as [String : Any]
+      
+        AlamoFireCommon.GetURL(url: "event/\(UserDefaults.standard.string(forKey: "user_id")! )", dict: [:]) { responceData, success, error in
+            if success
+            {
+                var status = 0
+                if let code = responceData["StatusCode"] as? Int
+                {
+                    status = code
+                }
+                if status == 200
+                {
+                    
+                    completion(responceData["data"] as! NSArray ,true,error )
+                    
+                 }
+                else {
+                    
+                    completion(NSArray() ,false,error )
+                }
+            }
+        }
+    }
+    public func deleteDeliveryEvent(eventId : String, completion: @escaping (_ responceData:NSDictionary, _ success: Bool, _ error: Error) -> ()){
+        
+      //  let dict = ["id" : UserDefaults.standard.string(forKey: "user_id")! ] as [String : Any]
+      
+        AlamoFireCommon.DeleteURL(url: "event/\(eventId)", dict: [:]) { responceData, success, error in
+            if success
+            {
+                var status = 0
+                if let code = responceData["StatusCode"] as? Int
+                {
+                    status = code
+                }
+                if status == 200
+                {
+                    completion(responceData as NSDictionary ,true,error )
+                    
+                }
+                else {
+                    completion(responceData as NSDictionary ,false,error )
+                }
+            }
+        }
+    }
+    
+    public func addDeliveryEvent(latitude: Double, longitude: Double, dateTime: String,  completion: @escaping (_ responceData:NSDictionary, _ success: Bool, _ error: Error) -> ()) {
+        
+        let geoHash = RelativeMap().hash(Lat: latitude, Lon: longitude, UserID: UserDefaults.standard.string(forKey: "user_id")!)
+        
+        let dict = ["customer_id" : UserDefaults.standard.string(forKey: "user_id")!,"geo_hash":geoHash as Any, "delivery_date" :dateTime ] as [String : Any]
+      
+        AlamoFireCommon.PostURL(url: "event", dict: dict) { responceData, success, error in
+            if success
+            {
+                var status = 0
+                if let code = responceData["StatusCode"] as? Int
+                {
+                    status = code
+                }
+                if status == 200
+                {
+                    completion(responceData as NSDictionary ,true,error )
+                    
+                }
+                else {
+                    completion(responceData as NSDictionary ,false,error )
+                }
+            }
+        }
+        
+    }
 }
 

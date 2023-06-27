@@ -176,4 +176,55 @@ public class AlamoFireCommon:  NSObject
             completion(temp as! Dictionary<String, Any>,false,MYError(description: "", domain: ""))
         }
     }
+  public  class func DeleteURL(url: String, dict:Dictionary<String, Any>, completion: @escaping (_ responceData:Dictionary<String, Any>, _ success: Bool, _ error: Error) -> ())
+    {
+        if SingleTon.isInternetAvailable()
+        {
+            //let fullUrl = "https://api-staging.green-convenience.com/v1/api/\(url)"
+            let fullUrl = "\(fullURL ?? "https://api-staging.green-convenience.com/v1/api/")\(url)"
+            var headers = HTTPHeaders()
+            headers = ["Content-Type": "application/json", "key": UserDefaults.standard.string(forKey: "ClientKey") ?? ""]
+           // fullUrl =  APIURL.BASEURL + url
+
+       
+            print("GET API: \(fullUrl)")
+            print("PARAMETER: \(dict as NSDictionary)")
+            //print("authentication-token: \(UserDefaultHelper.authToken ?? "")")
+            
+            //set Headers
+
+           
+            
+            AF.request(fullUrl, method: .delete, parameters: dict, encoding: URLEncoding.default, headers: headers, interceptor: nil).responseJSON { (response) in
+                switch response.result
+                {
+                case .success(_):
+                    if response.value != nil
+                    {
+                        print(response.value as! NSDictionary)
+                        let data = response.value! as! NSDictionary
+                       
+                            completion(data as! [String:AnyObject],true,response.error ?? MYError(description: "", domain: ""))
+                       // Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Place API").log("\(response.value as! NSDictionary)")
+                     //   DDLogDebug("\(response.value as! NSDictionary)")
+
+                    }
+                    break
+                case .failure(_):
+                    print(response.error!)
+                    let temp=NSDictionary.init(object: response.error?.localizedDescription ?? AlertTitleMessage.ERROR, forKey: "message" as NSCopying)
+                    completion(temp as! Dictionary<String, Any>,false,response.error!)
+                    Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Place API").log("\(temp )")
+                //    DDLogError("\(temp)")
+
+                    break
+                }
+            }
+        }
+        else
+        {
+            let temp=NSDictionary.init(object: AlertTitleMessage.INTERNET_ERROR, forKey: "message" as NSCopying)
+            completion(temp as! Dictionary<String, Any>,false,MYError(description: "", domain: ""))
+        }
+    }
 }

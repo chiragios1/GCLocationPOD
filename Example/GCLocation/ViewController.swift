@@ -14,11 +14,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        // GCLocation.shared.createNewClient(clintName: "ChiragIOS")
         GCLocation.shared.configure(serverURL: "https://api-staging.green-convenience.com", ClientKey: "dEdOeXdx", ClientID: "0f6dff20-b469-4ea4-ae9c-996b4523f3de")
+        
         GCLocation.shared.generateUser { success, useID in
             
         }
+        
        GCLocation.shared.startTracking()
         
+        
+       GCLocation.shared.requestDeliveryEvents { responceData, success, error in
+            
+           
+        }
         
         // Do any additional setup after loading the view, typically from a nib.
     }
