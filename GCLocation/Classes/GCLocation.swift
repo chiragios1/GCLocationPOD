@@ -444,7 +444,7 @@ public class GCLocation: NSObject {
     ///
     ///
     ///
-   
+    
    public func requestDeliveryEvents(completion: @escaping (_ responceData:NSArray, _ success: Bool, _ error: Error) -> ()) {
         
       //  let dict = ["id" : UserDefaults.standard.string(forKey: "user_id")! ] as [String : Any]
@@ -520,5 +520,31 @@ public class GCLocation: NSObject {
         }
         
     }
+  
+    public func requestCoreItem(eventId: String, completion: @escaping (_ responceData:NSDictionary, _ success: Bool, _ error: Error) -> ()) {
+         
+       //  let dict = ["id" : UserDefaults.standard.string(forKey: "user_id")! ] as [String : Any]
+       
+        AlamoFireCommon.GetURL(url: "core-item/\(eventId)", dict: [:]) { responceData, success, error in
+             if success
+             {
+                 var status = 0
+                 if let code = responceData["StatusCode"] as? Int
+                 {
+                     status = code
+                 }
+                 if status == 200
+                 {
+                     
+                     completion(responceData["data"] as! NSDictionary ,true,error )
+                     
+                  }
+                 else {
+                     
+                     completion(NSDictionary() ,false,error )
+                 }
+             }
+         }
+     }
 }
 
